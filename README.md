@@ -7,6 +7,10 @@ with Typescript, Node, AWS Lambda, nodemailer.
 https://github.com/rien1026/document/blob/master/ServerlessWithAWS.md
 ### 2. Config gmail for access
 ```
+- Less secure app access
+https://myaccount.google.com/lesssecureapps
+- Allow access to your Google account
+https://accounts.google.com/DisplayUnlockCaptcha
 ```
 ### 3. Install Serverless Framework
 ```
