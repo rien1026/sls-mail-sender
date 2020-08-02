@@ -1,0 +1,25 @@
+service:
+  name: sls-mail-sender
+
+plugins:
+  - serverless-plugin-typescript    
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-northeast-2
+  stage: ${opt:stage, 'dev'}
+  environment:
+    PROD_MODE: ${self:provider.stage}  
+
+functions:
+  Mail:
+    handler: src/handlers/MailHandler.mailHandler
+    memorySize: 192
+    timeout: 10
+    events:
+      - http:
+          method: any
+          path: /mails
+          cors: true
