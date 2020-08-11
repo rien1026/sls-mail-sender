@@ -44,3 +44,5 @@ Body :
  - html
 ```
 #### Postman Example
+![POSTMAN Example](https://csy-image-uploader-bucket.s3.ap-northeast-2.amazonaws.com/image/sls-mail-sender-usage-example.PNG)
+
