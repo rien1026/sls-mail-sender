@@ -10,5 +10,3 @@ export const transporter = nodemailer.createTransport({
 		pass: Constants.MAIL_CONFIG.MAIL_PASSWORD,
 	},
 });
-
-export const configureMail = () => {};

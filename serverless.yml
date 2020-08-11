@@ -2,8 +2,9 @@ service:
   name: sls-mail-sender
 
 plugins:
-  - serverless-plugin-typescript    
+  - serverless-plugin-typescript
   - serverless-dotenv-plugin
+  - serverless-offline
 
 provider:
   name: aws
@@ -11,15 +12,15 @@ provider:
   region: ap-northeast-2
   stage: ${opt:stage, 'dev'}
   environment:
-    PROD_MODE: ${self:provider.stage}  
+    PROD_MODE: ${self:provider.stage}
 
 functions:
   Mail:
-    handler: src/handlers/MailHandler.mailHandler
-    memorySize: 192
+    handler: src/MailHandler.mailHandler
+    memorySize: 128
     timeout: 10
     events:
       - http:
-          method: any
+          method: post
           path: /mails
           cors: true
