@@ -14,7 +14,7 @@ export const mailHandler = async (event: any, context: any) => {
 
 		return { statusCode: 200, body: JSON.stringify({ msg: 'suc' }) };
 	} catch (err) {
-		new AppError('AppErr', err.message, err.stack);
+		new AppError('AppErr', err.message, err.stack, err.errDetail);
 		return { statusCode: 400, body: JSON.stringify({ msg: err.message }) };
 	}
 };
